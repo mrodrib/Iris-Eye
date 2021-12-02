@@ -35,9 +35,7 @@
         />
         <h1 class="display-5 fw-bold">Detección de colores</h1>
         <div class="col-lg-6 mx-auto">
-          <p class="lead mb-0">
-            Clasificaci&oacute;n de colores usando webcam
-          </p>
+          <p class="lead mb-0">Clasificaci&oacute;n de colores usando webcam</p>
           <p class="lead mb-4">
             <!-- El detalle puedes verlo en
             <a href="https://youtu.be/LRckH4U5ls8">este video</a> -->
@@ -194,7 +192,7 @@
             var red = imgData.data[p] / 255;
             var green = imgData.data[p + 1] / 255;
             var blue = imgData.data[p + 2] / 255;
-            arr28.push([red, green, blue]); //Agregar al arr28 y normalizar a 0-1. Aparte queda dentro de un arreglo en el indice 0... again
+            arr28.push([blue, green, red]); //Agregar al arr28 y normalizar a 0-1. Aparte queda dentro de un arreglo en el indice 0... again
             if (arr28.length == 28) {
               arr.push(arr28);
               arr28 = [];
@@ -210,16 +208,16 @@
           );
 
           var clases = [
-            "black",
-            "blue",
-            "brown",
-            "green",
-            "grey",
-            "orange",
-            "red",
-            "violet",
-            "white",
-            "yellow",
+            "Negro",
+            "Azul",
+            "Marron",
+            "Verde",
+            "Gris",
+            "Naranja",
+            "Rojo",
+            "Violeta",
+            "Blanco",
+            "Amarillo",
           ];
           console.log("Prediccion", clases[mayorIndice]);
           document.getElementById("resultado").innerHTML = clases[mayorIndice];
