@@ -28,20 +28,19 @@
       <div class="px-4 py-2 my-2 text-center border-bottom">
         <img
           class="d-block mx-auto mb-2"
-          src="LogotipoV2-Simple.png"
+          src="logo.jpg"
           alt=""
           width="80"
           height="80"
         />
-        <h1 class="display-5 fw-bold">Perros y gatos</h1>
+        <h1 class="display-5 fw-bold">Detección de colores</h1>
         <div class="col-lg-6 mx-auto">
           <p class="lead mb-0">
-            Clasificaci&oacute;n de imágenes (Perro o Gato) usando la
-            c&aacute;mara web utilizando Tensorflow.js
+            Clasificaci&oacute;n de colores usando webcam
           </p>
           <p class="lead mb-4">
-            El detalle puedes verlo en
-            <a href="https://youtu.be/LRckH4U5ls8">este video</a>
+            <!-- El detalle puedes verlo en
+            <a href="https://youtu.be/LRckH4U5ls8">este video</a> -->
           </p>
         </div>
       </div>
@@ -197,7 +196,7 @@
             var blue = imgData.data[p + 2] / 255;
             arr28.push([red, green, blue]); //Agregar al arr28 y normalizar a 0-1. Aparte queda dentro de un arreglo en el indice 0... again
             if (arr28.length == 28) {
-              arr.push(28);
+              arr.push(arr28);
               arr28 = [];
             }
           }
