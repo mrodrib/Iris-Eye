@@ -10,7 +10,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <title>Prueba</title>
+    <title>Iris-Eye</title>
     <style>
       #resultado {
         font-weight: bold;
@@ -36,10 +36,6 @@
         <h1 class="display-5 fw-bold">Detección de colores</h1>
         <div class="col-lg-6 mx-auto">
           <p class="lead mb-0">Clasificaci&oacute;n de colores usando webcam</p>
-          <p class="lead mb-4">
-            <!-- El detalle puedes verlo en
-            <a href="https://youtu.be/LRckH4U5ls8">este video</a> -->
-          </p>
         </div>
       </div>
 
@@ -77,12 +73,9 @@
 
       <div class="bg-dark text-secondary mt-5 px-4 py-2 text-center">
         <div class="py-5">
-          <h1 class="display-5 fw-bold text-white">Ringa Tech</h1>
+          <h1 class="display-5 fw-bold text-white">Texto??</h1>
           <div class="col-lg-6 mx-auto">
-            <p class="fs-5 mb-4">
-              Revisa <a href="https://youtube.com/RingaTech">mi canal</a> para
-              videos de inteligencia artificial, programaci&oacute;n, etc.
-            </p>
+            <p class="fs-5 mb-4">Aquí texto ??</p>
           </div>
         </div>
       </div>
@@ -106,7 +99,7 @@
       var camaras = [];
 
       var currentStream = null;
-      var facingMode = "user"; //Para que funcione con el celular (user/environment)
+      var facingMode = "user";
 
       (async () => {
         console.log("Cargando modelo...");
@@ -185,7 +178,7 @@
 
           var ctx2 = othercanvas.getContext("2d");
 
-          var imgData = ctx2.getImageData(0, 0, 28, 28); ///posible error aquí
+          var imgData = ctx2.getImageData(0, 0, 28, 28);
           var arr = []; //El arreglo completo
           var arr28 = []; //Al llegar a arr28 posiciones se pone en 'arr' como un nuevo indice
           for (var p = 0, i = 0; p < imgData.data.length; p += 4) {
@@ -199,8 +192,7 @@
             }
           }
 
-          arr = [arr]; //Meter el arreglo en otro arreglo por que si no tio tensorflow se enoja >:(
-          //Nah basicamente Debe estar en un arreglo nuevo en el indice 0, por ser un tensor4d en forma 1, 28, 28, 3
+          arr = [arr]; //Meter el arreglo en otro arreglo
           var tensor4 = tf.tensor4d(arr);
           var resultados = modelo.predict(tensor4).dataSync();
           var mayorIndice = resultados.indexOf(
@@ -231,15 +223,6 @@
         setTimeout(procesarCamara, 20);
       }
 
-      /**
-       * Hermite resize - fast image resize/resample using Hermite filter. 1 cpu version!
-       *
-       * @param {HtmlElement} canvas
-       * @param {int} width
-       * @param {int} height
-       * @param {boolean} resize_canvas if true, canvas will be resized. Optional.
-       * Cambiado por RT, resize canvas ahora es donde se pone el chiqitillllllo
-       */
       function resample_single(canvas, width, height, resize_canvas) {
         var width_source = canvas.width;
         var height_source = canvas.height;
