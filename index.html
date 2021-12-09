@@ -10,7 +10,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <title>Iris-Eye</title>
+    <title>Prueba</title>
     <style>
       #resultado {
         font-weight: bold;
@@ -36,6 +36,10 @@
         <h1 class="display-5 fw-bold">Detección de colores</h1>
         <div class="col-lg-6 mx-auto">
           <p class="lead mb-0">Clasificaci&oacute;n de colores usando webcam</p>
+          <p class="lead mb-4">
+            <!-- El detalle puedes verlo en
+            <a href="https://youtu.be/LRckH4U5ls8">este video</a> -->
+          </p>
         </div>
       </div>
 
@@ -60,8 +64,8 @@
             ></canvas>
             <canvas
               id="othercanvas"
-              width="28"
-              height="28"
+              width="32"
+              height="32"
               style="display: none"
             ></canvas>
             <div id="resultado"></div>
@@ -73,9 +77,12 @@
 
       <div class="bg-dark text-secondary mt-5 px-4 py-2 text-center">
         <div class="py-5">
-          <h1 class="display-5 fw-bold text-white">Texto??</h1>
+          <h1 class="display-5 fw-bold text-white">Ringa Tech</h1>
           <div class="col-lg-6 mx-auto">
-            <p class="fs-5 mb-4">Aquí texto ??</p>
+            <p class="fs-5 mb-4">
+              Revisa <a href="https://youtube.com/RingaTech">mi canal</a> para
+              videos de inteligencia artificial, programaci&oacute;n, etc.
+            </p>
           </div>
         </div>
       </div>
@@ -99,7 +106,7 @@
       var camaras = [];
 
       var currentStream = null;
-      var facingMode = "user";
+      var facingMode = "user"; //Para que funcione con el celular (user/environment)
 
       (async () => {
         console.log("Cargando modelo...");
@@ -173,26 +180,27 @@
 
       function predecir() {
         if (modelo != null) {
-          //Pasar canvas a version 28x28
-          resample_single(canvas, 28, 28, othercanvas);
+          //Pasar canvas a version 32x32
+          resample_single(canvas, 32, 32, othercanvas);
 
           var ctx2 = othercanvas.getContext("2d");
 
-          var imgData = ctx2.getImageData(0, 0, 28, 28);
+          var imgData = ctx2.getImageData(0, 0, 32, 32); ///posible error aquí
           var arr = []; //El arreglo completo
-          var arr28 = []; //Al llegar a arr28 posiciones se pone en 'arr' como un nuevo indice
+          var arr32 = []; //Al llegar a arr32 posiciones se pone en 'arr' como un nuevo indice
           for (var p = 0, i = 0; p < imgData.data.length; p += 4) {
             var red = imgData.data[p] / 255;
             var green = imgData.data[p + 1] / 255;
             var blue = imgData.data[p + 2] / 255;
-            arr28.push([blue, green, red]); //Agregar al arr28 y normalizar a 0-1. Aparte queda dentro de un arreglo en el indice 0... again
-            if (arr28.length == 28) {
-              arr.push(arr28);
-              arr28 = [];
+            arr32.push([blue, green, red]); //Agregar al arr32 y normalizar a 0-1. Aparte queda dentro de un arreglo en el indice 0... again
+            if (arr32.length == 32) {
+              arr.push(arr32);
+              arr32 = [];
             }
           }
 
-          arr = [arr]; //Meter el arreglo en otro arreglo
+          arr = [arr]; //Meter el arreglo en otro arreglo por que si no tio tensorflow se enoja >:(
+          //Nah basicamente Debe estar en un arreglo nuevo en el indice 0, por ser un tensor4d en forma 1, 32, 32, 3
           var tensor4 = tf.tensor4d(arr);
           var resultados = modelo.predict(tensor4).dataSync();
           var mayorIndice = resultados.indexOf(
@@ -223,6 +231,15 @@
         setTimeout(procesarCamara, 20);
       }
 
+      /**
+       * Hermite resize - fast image resize/resample using Hermite filter. 1 cpu version!
+       *
+       * @param {HtmlElement} canvas
+       * @param {int} width
+       * @param {int} height
+       * @param {boolean} resize_canvas if true, canvas will be resized. Optional.
+       * Cambiado por RT, resize canvas ahora es donde se pone el chiqitillllllo
+       */
       function resample_single(canvas, width, height, resize_canvas) {
         var width_source = canvas.width;
         var height_source = canvas.height;
