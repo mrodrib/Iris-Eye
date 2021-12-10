@@ -12,60 +12,87 @@
     />
     <title>Iris-Eye</title>
     <style>
+      .resultado {
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-align: center;
+  
+      }
+  
       #resultado {
         font-weight: bold;
-        font-size: 6rem;
+        font-size: 2rem;
         text-align: center;
       }
+  
       .canvas-container {
         margin: 0 auto;
         border: 1px solid #ccc;
       }
+  
+      .video-result-containter {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+  
+      .camera-group {
+        display: flex;
+        width: 400px;
+        align-items: center;
+        flex-direction: column;
+      }
+  
+      .flex_col_right {
+        width: 30%;
+      }
+  
     </style>
   </head>
+  
   <body>
     <main>
-      <div class="px-4 py-2 my-2 text-center border-bottom">
-        <img
-          class="d-block mx-auto mb-2"
-          src="logo.jpg"
-          alt=""
-          width="80"
-          height="80"
-        />
-        <h1 class="display-5 fw-bold">Detección de colores</h1>
+      <div class="px-4 py-2 my-2 text-center border-bottom" style="
+        background-color: black;">
+        <img class="d-block mx-auto mb-2" src="Logo_IrisEye_azul_inv.png" alt="" width="120" height="120" />
+        <h1 class="display-5 fw-bold" style="
+          color: white;">Detección de colores</h1>
         <div class="col-lg-6 mx-auto">
-          <p class="lead mb-0">Clasificaci&oacute;n de colores usando webcam</p>
+          <p class="lead mb-0" style="
+            color: white;">Clasificaci&oacute;n de colores usando webcam</p>
         </div>
       </div>
-
+  
       <div class="b-example-divider"></div>
-
+  
       <div class="container mt-5">
         <div class="row">
-          <div class="col-12 col-md-4 offset-md-4 text-center">
-            <video id="video" playsinline autoplay style="width: 1px"></video>
-            <button
-              class="btn btn-primary mb-2"
-              id="cambiar-camara"
-              onclick="cambiarCamara();"
-            >
-              Cambiar camara
-            </button>
-            <canvas
-              id="canvas"
-              width="400"
-              height="400"
-              style="max-width: 100%"
-            ></canvas>
-            <canvas
-              id="othercanvas"
-              width="32"
-              height="32"
-              style="display: none"
-            ></canvas>
-            <div id="resultado"></div>
+          <!-- <div class="col-12 col-md-4 offset-md-4 text-center">-->
+  
+          <div class="video-result-containter">
+            <div class="camera-group">
+              <div>
+                <video id="video" playsinline autoplay style="width: 1px"></video>
+  
+                <canvas id="canvas" width="400" height="400" style="max-width: 100%"></canvas>
+                <canvas id="othercanvas" width="28" height="28" style="display: none"></canvas>
+  
+              </div>
+              <div>
+                <button class="btn btn-primary mb-2" style="background-color:#378bc2;" id="cambiar-camara" onclick="cambiarCamara();">
+                  Cambiar c&aacute;mara
+                </button>
+              </div>
+            </div>
+            <div class="flex_col_right">
+              <div class="resultado">El color resultado es:</div>
+              <div id="resultado"></div>
+            </div>
           </div>
+  
+  
+          <!--</div>-->
         </div>
       </div>
 
@@ -202,7 +229,7 @@
           var clases = [
             "Negro",
             "Azul",
-            "Marron",
+            "Marrón",
             "Verde",
             "Gris",
             "Naranja",
