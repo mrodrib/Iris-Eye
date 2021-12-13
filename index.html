@@ -9,7 +9,7 @@
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
-    />
+    /> 
     <title>Iris-Eye</title>
     <style>
       .resultado {
@@ -46,6 +46,14 @@
   
       .flex_col_right {
         width: 30%;
+      }
+
+      .recommend {
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
       }
   
     </style>
@@ -86,11 +94,14 @@
               </div>
             </div>
             <div class="flex_col_right">
-              <div class="resultado">El color resultado es:</div>
+              <div class="resultado">El color resultado* es:</div>
               <div id="resultado"></div>
+
+          
+
             </div>
           </div>
-  
+          
   
           <!--</div>-->
         </div>
@@ -99,12 +110,23 @@
       <div class="b-example-divider"></div>
 
       <div class="bg-dark text-secondary mt-5 px-4 py-2 text-center">
-        <div class="py-5">
-          <h1 class="display-5 fw-bold text-white">Texto??</h1>
-          <div class="col-lg-6 mx-auto">
-            <p class="fs-5 mb-4">Aquí texto ??</p>
+        <div>
+          <h1 class="lead mb-0 text-white">* Recomendaciones para una mejor efectividad en la identificación de colores: </h1>
+          <div class="recommend">
+          <div class="">
+            <p class="lead mb-0 text-white">Disponer de luz natural</p>
+          </div>
+          <div class="">
+            <p class="lead mb-0 text-white">Favorecer alta luminosidad</p>
+          </div>
+              
+              
+           
           </div>
         </div>
+      
+
+        
       </div>
 
       <div class="b-example-divider mb-0"></div>
