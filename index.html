@@ -56,8 +56,8 @@
     .header {
       display: flex;
       flex-direction: row;
-      
-       
+
+
     }
 
     .title {
@@ -65,6 +65,36 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+
+
+    @media (max-width:360px) {
+
+      .video-result-containter {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .recommend {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .resultado {
+        font-weight: bold;
+        font-size: 1.1rem;
+        text-align: center;
+
+      }
+
+      .flex_col_right {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -80,7 +110,7 @@
       </div>
     </div>
 
-    
+
 
 
     </div>
@@ -109,7 +139,7 @@
           </div>
           <div class="flex_col_right">
 
-            <div class="resultado">El color resultado* es:</div>
+            <div class="resultado">El color es:</div>
             <div id="resultado"></div>
 
 
@@ -131,10 +161,13 @@
         </h1>
         <div class="recommend">
           <div class="">
-            <p class="lead mb-0 text-white">Disponer de luz natural</p>
+            <p class="text-white">Disponer de luz natural</p>
           </div>
           <div class="">
-            <p class="lead mb-0 text-white">Favorecer alta luminosidad</p>
+            <p class="text-white">Favorecer alta luminosidad</p>
+          </div>
+          <div class="">
+            <p class="text-white">Acercar objeto a la cámara</p>
           </div>
 
 
