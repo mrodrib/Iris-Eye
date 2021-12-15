@@ -70,6 +70,11 @@
       justify-content: center;
     }
 
+    .botones {
+      display: flex;
+      flex-direction: row;
+    }
+
 
 
     @media (max-width:640px) {
@@ -139,24 +144,27 @@
 
         <div class="video-result-containter">
           <div class="camera-group">
-            <div>
-              <button type="button" class="btn btn-outline-dark d-lg-none" style="margin: 5px;" id="cambiar-camara"
-                onclick="cambiarCamara();">
-                Cambiar c&aacute;mara
-              </button>
+            <div class="botones">
+              <div>
+                <button type="button" class="btn btn-outline-dark d-lg-none" style="margin: 5px;" id="cambiar-camara"
+                  onclick="cambiarCamara();">
+                  Cambiar c&aacute;mara
+                </button>
+              </div>
+              <div>
+                <button type="button" class="btn btn-outline-dark d-none d-lg-block d-xl-block" style="margin: 5px;"
+                  id="encender-camara" onclick="mostrarCamara();">
+                  Encender c&aacute;mara
+                </button>
+              </div>
+              <div>
+                <button type="button" class="btn btn-outline-dark" style="margin: 5px;" id="apagar-camara"
+                  onclick="pararCamara();">
+                  Apagar c&aacute;mara
+                </button>
+              </div>
             </div>
-            <div>
-              <button type="button" class="btn btn-outline-dark d-none d-lg-block d-xl-block" style="margin: 5px;" id="encender-camara"
-                onclick="mostrarCamara();">
-                Encender c&aacute;mara
-              </button>
-            </div>
-            <!--<div>
-              <button type="button" class="btn btn-outline-dark" style="margin: 5px;" id="apagar-camara"
-                onclick="stopCamera();">
-                Apagar c&aacute;mara
-              </button>
-            </div> -->
+
             <div>
               <video id="video" playsinline autoplay style="width: 1px"></video>
 
@@ -232,20 +240,16 @@
     })();
 
     //window.onload = function () {
-    //  mostrarCamara();
+    //  stopCamara();
     //};
 
-    function stopCamera() {
+    function pararCamara() {
 
-      this.video.pause();
-        this.video.src = "";
-        this.video.srcObject = null;
-
-         // As per new API stop all streams
-        if (this.localStream)
-          this.localStream.getTracks().forEach(track => track.stop());
+      // As per new API stop all streams
+      if (currentStream)
+        currentStream.getTracks().forEach(track => track.stop());
     }
-  
+
 
 
     function mostrarCamara() {
