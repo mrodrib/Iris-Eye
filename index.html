@@ -16,7 +16,6 @@
       font-weight: bold;
       font-size: 1.5rem;
       text-align: center;
-      
     }
 
     #resultado {
@@ -63,11 +62,6 @@
       padding-top: 10px;
     }
 
-    .header {
-      display: flex;
-      flex-direction: row;
-    }
-
     .title {
       font-size: 30px;
       font-weight: lighter;
@@ -79,15 +73,19 @@
       flex-direction: row;
     }
 
-    .fa-toggle-on:hover, .fa-toggle-off:hover, .fa-camera:hover  {
+    .fa-toggle-on:hover,
+    .fa-toggle-off:hover,
+    .fa-camera:hover {
       color: #378bc2;
 
     }
 
-    .fa-toggle-on, .fa-toggle-off, .fa-camera {
-      font-size: 2.3rem; 
-      margin-left:20px;
-      margin-right:20px;
+    .fa-toggle-on,
+    .fa-toggle-off,
+    .fa-camera {
+      font-size: 2.3rem;
+      margin-left: 20px;
+      margin-right: 20px;
     }
 
     .button {
@@ -103,11 +101,13 @@
       color: #378bc2;
     }
 
-    .fa-sun, .fa-adjust, .fa-search-plus{
-      font-size: 1.5rem; 
-      padding-right:10px;
+    .fa-sun,
+    .fa-adjust,
+    .fa-search-plus {
+      font-size: 1.5rem;
+      padding-right: 10px;
     }
-    
+
 
 
     @media (max-width:640px) {
@@ -139,7 +139,6 @@
         font-weight: bold;
         font-size: 1.1rem;
         text-align: center;
-
       }
 
       .flex_col_right {
@@ -155,86 +154,34 @@
         background-color: black;">
       <img class="d-block mx-auto mb-2" src="Logo_IrisEye_azul_inv.png" alt="" width="140" height="140" />
       <p class="title" style="color: white;">detección de colores</p>
-      <!--<div class="col-lg-6 mx-auto d-none d-md-block">
-        <p class="lead mb-0" style="color: white;">Web para la detección de colores</p>
-      </div>-->
-      <!-- <div class="col-lg-6 mx-auto">
-        <p class="lead mb-0" style="color: white;">Clasificaci&oacute;n de colores usando webcam</p>
-      </div>-->
     </div>
-
-
-
-
     </div>
-
-    <!-- <div class="b-example-divider"></div> -->
 
     <div class="">
       <div class="row">
-        <!-- <div class="col-12 col-md-4 offset-md-4 text-center">-->
-
         <div class="video-result-containter">
           <div class="camera-group">
-            <!--
             <div class="botones">
-              <div>
-                <button type="button" class="btn btn-outline-dark " style="margin: 5px;" id="encender-camara"
-                  onclick="mostrarCamara();">
-                  Activar c&aacute;mara
-                </button>
-              </div>
-              <div>
-                <button type="button" class="btn btn-outline-dark d-lg-none" style="margin: 5px;" id="cambiar-camara"
-                  onclick="cambiarCamara();">
-                  Cambiar c&aacute;mara
-                </button>
-              </div>
-              <div>
-                <button type="button" class="btn btn-outline-dark" style="margin: 5px;" id="apagar-camara"
-                  onclick="pararCamara();">
-                  Parar c&aacute;mara
-                </button>
-              </div>
-            </div>
-            -->
-
-
-            <div class="botones">
-              
               <div>
                 <button class="button"><i class="fas fa-toggle-on" onclick="mostrarCamara();"></i>ON</button>
               </div>
               <div>
-                <button class="button d-lg-none"><i class="fas fa-camera d-lg-none" onclick="cambiarCamara();"></i>FRONT/BACK</button>
+                <button class="button d-lg-none"><i class="fas fa-camera d-lg-none"
+                    onclick="cambiarCamara();"></i>FRONT/BACK</button>
               </div>
               <div>
                 <button class="button"><i class="fas fa-toggle-off" onclick="pararCamara();"></i>OFF</button>
               </div>
             </div>
+            <video id="video" playsinline autoplay style="width: 1px"></video>
 
-            <!--<div>-->
-              <video id="video" playsinline autoplay style="width: 1px"></video>
-
-              <canvas id="canvas" width="400" height="400" style="max-width: 100%"></canvas>
-              <canvas id="othercanvas" width="28" height="28" style="display: none"></canvas>
-
-            <!--</div>-->
-
+            <canvas id="canvas" width="400" height="400" style="max-width: 100%"></canvas>
+            <canvas id="othercanvas" width="28" height="28" style="display: none"></canvas>
           </div>
           <div class="flex_col_right">
-
-            <!--<div class="resultado">El color es:</div>-->
             <div id="resultado"></div>
-
-
-
-
           </div>
         </div>
-
-
-        <!--</div>-->
       </div>
     </div>
 
@@ -255,11 +202,7 @@
         <div class="">
           <p class="text-white"><i class="fas fa-search-plus"></i>Acercar objeto a la cámara</p>
         </div>
-
-
-
       </div>
-    </div>
     </div>
 
     <div class="b-example-divider mb-0"></div>
@@ -287,18 +230,12 @@
       console.log("Modelo cargado...");
     })();
 
-    //window.onload = function () {
-    //  stopCamara();
-    //};
-
     function pararCamara() {
 
       // As per new API stop all streams
       if (currentStream)
         currentStream.getTracks().forEach(track => track.stop());
     }
-
-
 
     function mostrarCamara() {
       var opciones = {
