@@ -16,13 +16,14 @@
       font-weight: bold;
       font-size: 1.5rem;
       text-align: center;
-
+      
     }
 
     #resultado {
       font-weight: bold;
       font-size: 2rem;
       text-align: center;
+      margin-bottom: 15px;
     }
 
     .canvas-container {
@@ -35,6 +36,7 @@
       width: 100%;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
     }
 
     .camera-group {
@@ -83,6 +85,27 @@
 
     }
 
+    .fa-toggle-on, .fa-toggle-off, .fa-camera {
+      font-size: 2.3rem; 
+      margin-left:20px;
+      margin-right:20px;
+    }
+
+    .button {
+      border: none;
+      background-color: white;
+      display: flex;
+     flex-direction: column;
+     align-items: center;
+    }
+
+    .button:hover {
+      color: #378bc2;
+    }
+
+    
+
+
     @media (max-width:640px) {
 
       .video-result-containter {
@@ -127,7 +150,7 @@
     <div class="px-4 py-2 my-2 text-center border-bottom" style="
         background-color: black;">
       <img class="d-block mx-auto mb-2" src="Logo_IrisEye_azul_inv.png" alt="" width="140" height="140" />
-      <h3 class="d-none d-md-block" style="color: white;">Web para deteccción de colores</h3>
+      <!--<h3 class="d-none d-md-block" style="color: white;">Web para detección de colores</h3>-->
       <!--<div class="col-lg-6 mx-auto d-none d-md-block">
         <p class="lead mb-0" style="color: white;">Web para la detección de colores</p>
       </div>-->
@@ -175,14 +198,14 @@
 
 
             <div class="botones">
+              
+              <div><button class="button"><i class="fas fa-toggle-on" onclick="mostrarCamara();"></i><span class="textoBoton">ON</span<button></div>
+              
               <div>
-                <i class="fas fa-toggle-on" style="font-size: 2rem; margin:10px;" onclick="mostrarCamara();"></i>
+                <button class="button d-lg-none"><i class="fas fa-camera d-lg-none" onclick="cambiarCamara();"></i>FRONT/BACK</button>
               </div>
               <div>
-                <i class="fas fa-camera d-lg-none" style="font-size: 2rem; margin:10px;" onclick="cambiarCamara();"></i>
-              </div>
-              <div>
-                <i class="fas fa-toggle-off" style="font-size: 2rem; margin:10px;" onclick="pararCamara();"></i>
+                <button class="button"><i class="fas fa-toggle-off" onclick="pararCamara();"></i>OFF</button>
               </div>
             </div>
 
