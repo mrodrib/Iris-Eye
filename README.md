@@ -40,7 +40,7 @@ You can use it in this [link](https://inspiring-payne-53333a.netlify.app/)
 
 Or through this qr code
 
-<img src="./images/qr-irisEye.png" height="300" title="Screenshot">
+<img src="./images/qr-irisEye.png" height="200" title="Screenshot">
 
 through on/off buttons you can enable/disable access to the camera. 
 
