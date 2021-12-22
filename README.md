@@ -1,6 +1,6 @@
 # Iris Eye 
 
-_This proyect aims to help people with color blindness recognize 11 preselected colors._
+_This project aims, through an artificial intelligence model, to help people with color blindness to recognize 11 pre-selected colors._
 
 # Table of contents
 * [Iris-Eye](#iris-eye)
@@ -37,6 +37,14 @@ https://github.com/LorenaDeveloper/Iris-Eye.git
 
 # Usage
 You can use it in this [link](https://inspiring-payne-53333a.netlify.app/)
+
+Or through this qr code
+
+<img src="./images/qr-irisEye.png" height="300" title="Screenshot">
+
+through on/off buttons you can enable/disable access to the camera. 
+
+front/back button switch between the front and rear camera (only available for mobile and tablet)
 
 
 # Status
