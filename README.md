@@ -1,6 +1,6 @@
 # Iris Eye 
 
-_This project aims, through an artificial intelligence model, to help people with color blindness to recognize 11 pre-selected colors._
+_This project aims, through an **artificial intelligence model**, to help people with color blindness to recognize 11 pre-selected colors._
 
 # Table of contents
 * [Iris-Eye](#iris-eye)
@@ -35,7 +35,7 @@ Clone/Download repository
 https://github.com/LorenaDeveloper/Iris-Eye.git
 ```
 
-To perform the deployment, I linked this repository with Netlify, which allows each new update to be reflected in the url 
+To perform the deployment, I linked this repository with **Netlify**, which allows each new update to be reflected in the url 
 
 # Usage
 You can use it in this [link](https://inspiring-payne-53333a.netlify.app/)
