@@ -20,7 +20,6 @@
     <link rel="icon" href="favicon.png" type="image/png" />
     <title>Iris-Eye</title>
   </head>
-
   <body>
     <main>
       <div
@@ -36,7 +35,6 @@
         />
         <p class="title" style="color: white">detección de colores</p>
       </div>
-
       <div class="video-result-containter">
         <div class="camera-group">
           <div class="botones">
@@ -61,7 +59,6 @@
             </div>
           </div>
           <video id="video" playsinline autoplay style="width: 1px"></video>
-
           <canvas
             id="canvas"
             width="400"
@@ -79,9 +76,7 @@
           <div id="resultado"></div>
         </div>
       </div>
-
       <div class="b-example-divider"></div>
-
       <div class="bg-dark text-center">
         <div class="recommend1">
           <h2 class="lead mb-0 text-white">Recomendaciones de uso:</h2>
@@ -104,9 +99,9 @@
           </div>
         </div>
       </div>
-
       <div class="b-example-divider mb-0"></div>
     </main>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -114,8 +109,9 @@
     ></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+
     <script type="text/javascript">
-      //Tomar y configurar el canvas
+      //Take and configure the canvas
       var canvas = document.getElementById("canvas");
       var video = document.getElementById("video");
       var ctx = canvas.getContext("2d");
@@ -200,26 +196,26 @@
 
       function predecir() {
         if (modelo != null) {
-          //Pasar canvas a version 32x32
+          //Convert canvas to 32x32 version
           resample_single(canvas, 32, 32, othercanvas);
 
           var ctx2 = othercanvas.getContext("2d");
 
           var imgData = ctx2.getImageData(0, 0, 32, 32);
-          var arr = []; //El arreglo completo
-          var arr32 = []; //Al llegar a arr32 posiciones se pone en 'arr' como un nuevo indice
+          var arr = []; //The complete array
+          var arr32 = []; //When arr32 positions are reached, it is set to 'arr' as a new index
           for (var p = 0, i = 0; p < imgData.data.length; p += 4) {
             var red = imgData.data[p] / 255;
             var green = imgData.data[p + 1] / 255;
             var blue = imgData.data[p + 2] / 255;
-            arr32.push([blue, green, red]); //Agregar al arr32 y normalizar a 0-1. Aparte queda dentro de un arreglo en el indice 0... again
+            arr32.push([blue, green, red]); //Add to arr32 and normalize to 0-1. Apart from that it is inside an array at index 0... again
             if (arr32.length == 32) {
               arr.push(arr32);
               arr32 = [];
             }
           }
 
-          arr = [arr]; //Meter el arreglo en otro arreglo
+          arr = [arr]; //Put the array into another array
           var tensor4 = tf.tensor4d(arr);
           var resultados = modelo.predict(tensor4).dataSync();
           var mayorIndice = resultados.indexOf(
