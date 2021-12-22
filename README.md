@@ -35,7 +35,7 @@ Clone/Download repository
 https://github.com/LorenaDeveloper/Iris-Eye.git
 ```
 
-I used Netlify for deploying 
+To perform the deployment, I linked this repository with Netlify, which allows each new update to be reflected in the url 
 
 # Usage
 You can use it in this [link](https://inspiring-payne-53333a.netlify.app/)
