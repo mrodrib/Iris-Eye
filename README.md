@@ -21,7 +21,7 @@ Duration: 2 weeks
 It's part of _"III CURSO DE EXTENSIÓN UNIVERSITARIA SAMSUNG INNOVATION CAMPUS EN INTELIGENCIA ARTIFICIAL (2021-22)"_ taught by the University of Malaga
 
 # Screenshots
-<img src="./images/screenshot.jpg" height="300" title="Screenshot">
+<img src="./images/screenshot.jpg" height="300" title="Screenshot"> <img src="./images/screenshot1.png" height="300" title="Screenshot">
 
 # Technologies
 * HTML
