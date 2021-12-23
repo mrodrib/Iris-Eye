@@ -53,4 +53,4 @@ front/back button switch between the front and rear camera (only available for m
 Proyect is : _Completed_
 
 # Contact
-Created by [@Lorena](https://www.linkedin.com/in/lorena-jiménez-tejada-966611176), fell free to contact me! In collaboration with [@Mercedes Rodríguez](https://www.linkedin.com/in/mercedes-rodriguez-barbero-20ab3766), [@Marta Trasancos](https://www.linkedin.com/mwlite/in/marta-trasancos-09178063), [@Marta Freire](https://www.linkedin.com/in/marta-freire-painceira-8ba76025) and Marina Jiménez
+Created by [@Lorena](https://www.linkedin.com/in/lorena-jiménez-tejada-966611176), fell free to contact me! In collaboration with [@Mercedes Rodríguez](https://www.linkedin.com/in/mercedes-rodriguez-barbero-20ab3766), [@Marta Trasancos](https://www.linkedin.com/mwlite/in/marta-trasancos-09178063), [@Marta Freire](https://www.linkedin.com/in/marta-freire-painceira-8ba76025) and [@Marina Jiménez](https://www.linkedin.com/in/marinajimenezegea)
