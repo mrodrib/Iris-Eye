@@ -1,6 +1,6 @@
 # Iris Eye 
 
-_This project aims, through an **artificial intelligence model**, to help people with color blindness to recognize 11 pre-selected colors._
+_This project aims, through an **artificial intelligence model** [link](https://github.com/LorenaDeveloper/Iris_Eye_Model), to help people with color blindness to recognize 11 pre-selected colors._
 
 # Table of contents
 * [Iris-Eye](#iris-eye)
