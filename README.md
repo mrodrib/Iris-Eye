@@ -10,6 +10,7 @@ _This project aims, through an **artificial intelligence model** [link](https://
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Usage](#usage)
+* [Demo](#demo)
 * [Status](#status)
 * [Contact](#contact)
 
@@ -49,6 +50,9 @@ through on/off buttons you can enable/disable access to the camera.
 
 front/back button switch between the front and rear camera (only available for mobile and tablet)
 
+# Demo
+
+[Click here to play demo](https://github.com/LorenaDeveloper/Iris-Eye/blob/main/Pruebas%20APP.mp4)
 
 # Status
 Proyect is : _Completed_
