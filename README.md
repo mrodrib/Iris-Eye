@@ -33,14 +33,14 @@ It's part of _"III CURSO DE EXTENSIÓN UNIVERSITARIA SAMSUNG INNOVATION CAMPUS E
 
 Clone/Download repository
 ```sh
-https://github.com/LorenaDeveloper/Iris-Eye.git
+https://github.com/mrodrib/Iris-Eye.git
 ```
 
 To perform the deployment, I linked this repository with **Netlify**, which allows each new update to be reflected in the url   
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a630d120-d069-43c1-bb9b-21962a59b74e/deploy-status)](https://app.netlify.com/sites/inspiring-payne-53333a/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/85d45a8f-1328-439c-9b1e-4c422e611cfd/deploy-status)](https://app.netlify.com/sites/nifty-roentgen-fefe19/deploys)
 
 # Usage
-You can use it in this [link](https://inspiring-payne-53333a.netlify.app/)
+You can use it in this [link](https://nifty-roentgen-fefe19.netlify.app/)
 
 Or through this qr code
 
